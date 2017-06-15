@@ -71,7 +71,7 @@ Move `SECRET_KEY` to a file inaccessible to web users, e.g. `/home/danielsenhwon
 
 ```
 with open('/home/danielsenhwong/project_secrets/danjaysci_secret_key.txt') as f:
-    SECRET_KEY = f.read.strip()
+    SECRET_KEY = f.read().strip()
 ```
 
 The file should contain only the secret key text.

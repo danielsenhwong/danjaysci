@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Moved secret key to a separate file
 with open('/home/danielsenhwong/project_secrets/danjaysci_secret_key.txt') as f:
-    SECRET_KEY = f.read.strip()
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,6 +32,10 @@ ALLOWED_HOSTS = ['danjaysci.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'news.apps.NewsConfig',
+    'lab_members.apps.LabMembersConfig',
+    'institutions.apps.InstitutionsConfig',
+    'supplies.apps.SuppliesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,6 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'read_default_file': '/home/danielsenhwong/project_secrets/danjaysci_database.cnf',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
