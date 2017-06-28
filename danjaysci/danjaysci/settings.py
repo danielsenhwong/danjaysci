@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['danjaysci.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
     'news.apps.NewsConfig',
     'lab_members.apps.LabMembersConfig',
     'institutions.apps.InstitutionsConfig',

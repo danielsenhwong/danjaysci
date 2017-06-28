@@ -1,0 +1,26 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <div>
+        <h1>Supplies</h1>
+            {% for item in items %}
+            <div>
+                <h3>{{ item.name }}</h3>
+                {{ item.manufacturer }}, # {{ item.catalog_number }}<br />
+                <p>{{ item.description|linebreaksbr }}</p>
+            </div>
+            {% endfor %}
+    </div>
+    <div>
+        <h1>Recent supply requests</h1>
+    
+    </div>
+    <div>
+        <h1>Recent supply orders pending delivery</h1>
+        
+    </div>
+    <div>
+        <h1>Recently received supply orders</h1>
+        
+    </div>
+{% endblock %}

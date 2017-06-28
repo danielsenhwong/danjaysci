@@ -17,14 +17,28 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/',
-        admin.site.urls),
-    url(r'^news/',
-        include('news.urls')),
-    url(r'^lab_members/',
-        include('lab_members.urls')),
-    url(r'^institutions/',
-        include('institutions.urls')),
-    url(r'^supplies/',
-        include('supplies.urls')),
+    url(
+        r'',
+        include('home.urls')
+    ),
+    url(
+        r'^admin/',
+        admin.site.urls
+    ),
+    url(
+        r'^news/',
+        include('news.urls')
+    ),
+    url(
+        r'^lab_members/',
+        include('lab_members.urls')
+    ),
+    url(
+        r'^institutions/',
+        include('institutions.urls')
+    ),
+    url(
+        r'^supplies/',
+        include('supplies.urls')
+    ),
 ]
