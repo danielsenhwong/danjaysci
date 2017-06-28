@@ -9,7 +9,7 @@ pyenv local 3.4.4
 ### Install Django, mysqlclient
 
 ```
-pip install django mysqlclient
+pip install django mysqlclient django-excel
 ```
 
 ### Start Django project and enable as Passenger application
@@ -84,6 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'read_default_file': '/home/danielsenhwong/project_secrets/danjaysci_database.cnf',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
