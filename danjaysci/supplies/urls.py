@@ -5,10 +5,10 @@ from .views import SupplyListView, SupplyDetailView, OrderListView, OrderDetailV
 
 app_name = "supplies"
 urlpatterns = [
-    #url(r'^$', views.index, name = 'index'),
-    url(r'^$',
-        SupplyListView.as_view(),
-        name='supply-list'),
+    url(r'^$', views.index, name = 'index'),
+    #url(r'^$',
+    #    SupplyListView.as_view(),
+    #    name='supply-list'),
     url(r'^(?P<pk>[0-9]+)/$',
         SupplyDetailView.as_view(),
         name='supply-detail'),

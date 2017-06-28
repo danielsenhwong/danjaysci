@@ -16,10 +16,13 @@ class UploadFileForm(forms.Form):
     file = forms.FileField()
 
 # Create your views here.
-#def index(request):
-#    current_supplies = Item.objects.order_by('name')
-#    output = ', '.join([i.name for i in current_supplies])
-#    return HttpResponse(output)
+def index(request):
+    items = Item.objects.order_by('name')
+    context = {
+        'items': items
+    }
+    return render(request, 'supplies/index.html', context)
+
 def import_data(request):
     if request.method == "POST":
         form = UploadFileForm(request.POST, request.FILES)
